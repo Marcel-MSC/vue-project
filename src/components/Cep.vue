@@ -3,6 +3,7 @@
         <input placeholder="Insira o CEP" :value="cepInputed" @input="event => cepInputed = event.target.value">
         <button @click="addCepToList">Adicionar endereço</button>
     </div>
+    <hr>
     <div>
         <ul>
             <li v-for="cep in cepList">
@@ -16,21 +17,19 @@
     <hr>
     <div>
         <ul v-if="cepFound">
-            <li v-for="address in addresses">
+            <div v-for="address in addresses">
                 <div>
                     <p>{{ address.logradouro }}</p>
                     <p>{{ address.cep}}</p>
                     <p>{{ address.localidade + '-' + address.uf }}</p>
-                    <div>icone de lixeira</div>
                 </div>
-            </li>
+            </div>
         </ul>
     </div>
 </template>
 
 <script>
 export default {
-
     name: 'Cep',
     data() {
         return {
@@ -80,5 +79,8 @@ export default {
 
 li {
     display: list-item
+}
+button {
+    margin-left: 5%;
 }
 </style>

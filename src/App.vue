@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <TopMenu />
+    <hr>
     <Cep />
   </div>
 </template>
